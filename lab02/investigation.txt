@@ -1,0 +1,9 @@
+]633;E;echo "Current user: $(whoami)";6e1c9ce1-ec79-415f-9ece-aa5040a8568e]633;CCurrent user: codespace
+Hostname: codespaces-be5b10
+Current directory: /workspaces/scripting-for-cybersecurity/lab02
+Current shell: /bin/bash
+User home directory: /home/codespace
+Location of python3: /home/codespace/.python/current/bin/python3
+Location of bash: /usr/bin/bash
+Number of environment variables: 92
+Filenames in /usr/bin containing ssh: 7

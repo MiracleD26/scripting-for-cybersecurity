@@ -1,0 +1,3 @@
+codespaces-be5b10
+/bin/bash
+/home/codespace

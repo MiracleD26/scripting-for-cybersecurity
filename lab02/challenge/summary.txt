@@ -1,0 +1,6 @@
+]633;E;echo "Cybersecurity CLI Report";8e66841a-6ff3-4c5d-848a-95d1b05d6d3a]633;CCybersecurity CLI Report
+User: codespace
+Host: codespaces-be5b10
+Directory: /workspaces/scripting-for-cybersecurity/lab02/challenge
+Python: /home/codespace/.python/current/bin/python3
+Python filenames found: 6
