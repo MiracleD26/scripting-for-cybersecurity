@@ -1,0 +1,8 @@
+]633;E;echo "Linux CLI Revision Report";9b5de124-938d-4229-a4bd-91ef7115875a]633;CLinux CLI Revision Report
+User: codespace
+Host: codespaces-be5b10
+Directory: /workspaces/scripting-for-cybersecurity/revision01
+Shell: /bin/bash
+Python: /home/codespace/.python/current/bin/python3
+Environment variables: 92
+Python-related filenames: 0
