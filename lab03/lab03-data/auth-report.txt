@@ -1,0 +1,7 @@
+Authentication Analysis
+Total Events: 184
+Failed Passwords: 124
+Accepted Passwords Events: 57
+Invalid User Events: 2
+
+Failed Login Sources

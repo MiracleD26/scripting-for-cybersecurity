@@ -1,0 +1,10 @@
+Web Access Analysis
+
+Total Requests: 0
+403 responses: 34
+404 responses: 37
+Requests to /admin: 29
+Requests to /.env: 9
+Sqlmap Requests: 0
+
+Top Source IP:
