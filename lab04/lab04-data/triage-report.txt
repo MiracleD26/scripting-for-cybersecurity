@@ -1,0 +1,37 @@
+File Triage Report
+
+Total Files: 23
+Total Directories: 9
+Python Files: 2
+Shell Scripts: 1
+Log Files: 4
+Configuration Files: 3
+Empty Files: 1
+Archives: 1
+
+Files Containing "admin":
+
+Detected File Types in Evidence:
+./backups/config.old:      ASCII text
+./backups/users.old:       ASCII text
+./config-new.txt:          ASCII text
+./config-old.txt:          ASCII text
+./configs/app.conf:        ASCII text
+./configs/backup.conf:     ASCII text
+./configs/server.conf:     ASCII text
+./docs/inventory.txt:      ASCII text
+./evidence/archive.zip:    Zip archive data, at least v2.0 to extract, compression method=deflate
+./evidence/empty.bin:      empty
+./evidence/image.png:      PNG image data, 1 x 1, 8-bit/color RGBA, non-interlaced
+./evidence/notes.txt:      ASCII text
+./evidence/passwords.txt:  ASCII text
+./evidence/readme.md:      ASCII text
+./evidence/suspicious.dat: ELF, unknown class 154
+./logs/access.log:         ASCII text
+./logs/auth.log:           ASCII text
+./logs/firewall.log:       ASCII text
+./nested/archive/old.log:  ASCII text
+./scripts/check.sh:        Bourne-Again shell script, ASCII text executable
+./scripts/report.py:       ASCII text
+./scripts/scan.py:         ASCII text
+./triage-report.txt:       ASCII text
