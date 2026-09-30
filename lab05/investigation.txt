@@ -1,0 +1,5 @@
+1. None of them were different, they are all the same from what I can see.
+
+2. If `lab04-data` were replaced by a new collection tomorrow, In triage.sh I would have to change the path for where im getting the information for the file and case directory.
+
+3. That `case/evidence/suspicious.dat` is or has an unknown class.
