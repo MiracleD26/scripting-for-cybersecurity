@@ -1,0 +1,19 @@
+]633;E;echo "Labs 3 and 4 Revision Report";2ff594b4-0a2b-4f13-be90-b920c5887212]633;CLabs 3 and 4 Revision Report
+
+Authentication Log Entries: (grep -c 'Auth' auth.log)
+Failed Password Events: 45
+Accepted Password Events: 15
+Unique Failed Login IPs: 5
+Most Frequent Failed Login IP: 203.0.113.10
+
+Web Requests: (grep -c 'web' auth.log)
+403 Responses: 15
+404 Responses: 11
+
+Lab 4 Files: 4
+Lab 4 Directories: 1
+Python Files: 0
+Shell Scripts: 0
+Log Files: 3
+Configuration Files: 0
+Empty Files: 0
