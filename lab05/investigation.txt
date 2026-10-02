@@ -1,5 +1,23 @@
 1. None of them were different, they are all the same from what I can see.
 
-2. If `lab04-data` were replaced by a new collection tomorrow, In triage.sh I would have to change the path for where im getting the information for the file and case directory.
+2. If `lab04-data` were replaced by a new collection tomorrow, In triage.sh I would have to change the path for where im
+ getting the information for the file and case directory.
 
 3. That `case/evidence/suspicious.dat` is or has an unknown class.
+
+					Lab06
+1. 203.0.113.10 is the top attacker and 15 203.0.113.10, 14 198.51.100.24, 8 198.51.100.77 are the top three attackers in the
+ **collected** log, and in the **server** log.
+
+Yes the ranking is the same also, the collected log alone would have given me the right answer to who attacked most because,
+ the collected log records all failed and accepted attempts.
+
+2. The complete list of targeted usernames in the server log are 203.0.113.10, 198.51.100.24, 198.51.100.77, 203.0.113.15,
+ 203.0.113.200.
+
+The word `invalid` doesn't appear as a username.
+
+3. What `attacker_report.sh` printed for `access.log` Is just not meaningful because it only records and stores only the,
+access attempts, I would change what the attacker_report.sh printed for access.log by telling it to record and store all data.
+
+4. I don't know....

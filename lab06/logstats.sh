@@ -16,11 +16,23 @@ CHAR_COUNT=$(wc -c < "$LOGFILE")
 FIRST_LINE=$(head -n 1 "$LOGFILE")
 LAST_LINE=$(tail -n 1 "$LOGFILE")
 
+LONGEST_LINE=$(awk '{ print length }' "$LOGFILE" | sort -rn | head -n 1)
+FAILED=$(grep -c "Failed password" "$LOGFILE")
+
 echo "Log file        : $LOGFILE"
 echo "Total lines     : $LINE_COUNT"
 echo "Total words     : $WORD_COUNT"
 echo "Total characters: $CHAR_COUNT"
 echo "First line      : $FIRST_LINE"
 echo "Last line       : $LAST_LINE"
+echo "Longest line    : $LONGEST_LINE characters"
+echo "Failed logins   : $FAILED"
+
+read -p "Enter a keyword to search for (or press Enter to skip): " KEYWORD
+
+if [ -n "$KEYWORD" ]; then
+    MATCH_COUNT=$(grep -c "$KEYWORD" "$LOGFILE")
+    echo "Lines containing '$KEYWORD': $MATCH_COUNT"
+fi
 
 exit 0
