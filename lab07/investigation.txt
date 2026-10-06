@@ -1,0 +1,123 @@
+
+
+=== USERNAME: alice ===
+Account: alice
+Source:  CURRENT
+Role:    student
+Status:  active
+Failed logins:   0
+Accepted logins: 6
+Risk level: UNKNOWN
+WARNING: current account 'alice' has accepted logins AND plaintext credentials in passwords.txt
+EXIT CODE: 0
+---
+
+=== USERNAME: bob ===
+Account: bob
+Source:  CURRENT
+Role:    student
+Status:  active
+Failed logins:   0
+Accepted logins: 5
+Risk level: UNKNOWN
+WARNING: current account 'bob' has accepted logins AND plaintext credentials in passwords.txt
+EXIT CODE: 0
+---
+
+=== USERNAME: eve ===
+Account: eve
+Source:  CURRENT
+Role:    staff
+Status:  active
+Failed logins:   0
+Accepted logins: 3
+Risk level: UNKNOWN
+EXIT CODE: 0
+---
+
+=== USERNAME: david ===
+Account: david
+Source:  CURRENT
+Role:    student
+Status:  disabled
+Failed logins:   0
+Accepted logins: 0
+Risk level: UNKNOWN
+EXIT CODE: 0
+---
+
+=== USERNAME: admin ===
+Account: admin
+Source:  LEGACY
+Failed logins:   17
+Accepted logins: 0
+Risk level: UNKNOWN
+WARNING: LEGACY account 'admin' was targeted by 17 failed login(s) (attacker is guessing names)
+EXIT CODE: 2
+---
+
+=== USERNAME: root ===
+Account: root
+Source:  LEGACY
+Failed logins:   10
+Accepted logins: 0
+Risk level: UNKNOWN
+WARNING: LEGACY account 'root' was targeted by 10 failed login(s) (attacker is guessing names)
+EXIT CODE: 2
+---
+
+=== USERNAME: backup ===
+Account: backup
+Source:  LEGACY
+Failed logins:   4
+Accepted logins: 0
+Risk level: UNKNOWN
+WARNING: LEGACY account 'backup' was targeted by 4 failed login(s) (attacker is guessing names)
+EXIT CODE: 2
+---
+
+=== USERNAME: oracle ===
+Account: oracle
+Source:  UNKNOWN
+Failed logins:   3
+Accepted logins: 0
+Risk level: UNKNOWN
+WARNING: UNKNOWN account 'oracle' was targeted by 3 failed login(s) (attacker is guessing names)
+EXIT CODE: 3
+---
+
+=== USERNAME: nobody ===
+Account: nobody
+Source:  UNKNOWN
+Failed logins:   0
+Accepted logins: 0
+Risk level: UNKNOWN
+EXIT CODE: 3
+---
+
+
+1. Current accounts are alice, bob, eve, david.
+
+This suggests the attacker clearly knew these were valid usernames.
+They targeted, active accounts from the current user directory, which also indicates that the attacker
+had access to the user list.
+
+2. Targeted names that are legacy accounts found only in the old backup are, admin, root and backup.
+
+If they still existed a root would be the most dangerous because,
+you full unrestricted access to everything.
+
+3. No david is the only disabled account but had 0 accepted logins.
+
+Accepted logins tells you that someone successfully signed in as a user with a password.
+
+It doesn't prove whether the attacker is still active or who the attacker is....
+
+4. The accounts that have both plaintext credentials on the workstation and successful logins were,
+alice and bob.
+
+
+Alice had 4 different internal addresses that she logged in with and bob had 3.
+That's worth reporting because that means either 1, multiple PC's have been compromised or 2,
+the attacker is attacking by, changing IP addresses by using a VPN or attacking from different
+locations.
