@@ -8,7 +8,7 @@
 #   6  search term is empty
 
 
-FIREWALL_LOG="lab07/case/logs/firewall.log"
+FIREWALL_LOG="case/logs/firewall.log"
 IOC_FILE="intel/iocs.txt"
 
 # Lab 7 risk thresholds for "Failed password" events

@@ -1,0 +1,12 @@
+1. Firewall lines (case/logs/firewall.log) ---
+(no firewall entries for this address)
+--- IOC list (intel/iocs.txt) ---
+198.51.100.77 is NOT listed in the IOC list.
+
+2. BLOCK 203.0.113.200 -> 10.0.0.30:3389
+--- IOC list (intel/iocs.txt) ---
+203.0.113.200 IS listed in the IOC list.
+
+The service that auth.log showed it attacking was the Remote Desktop Protocol (RDP).
+
+3. 203.0.113.77 was scanning the site for vulnerabilities.
