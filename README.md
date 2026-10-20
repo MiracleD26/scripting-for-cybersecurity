@@ -12,3 +12,4 @@ This repository contains my practical work for the Scripting for Cybersecurity m
 - Lab 06 - Command Substitution, Arguments and Exit Codes
 - Lab 07 - Decisions in Bash — if, elif, else and Comparisons
 - Lab 08 - File Tests and Applied Decision-Making
+- Lab 09 - For Loops and Repetitive Security Tasks
