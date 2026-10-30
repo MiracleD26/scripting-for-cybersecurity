@@ -1,0 +1,102 @@
+=== case/evidence/archive.zip ===
+size: 138 bytes
+type: Zip archive data, at least v2.0 to extract, compression method=deflate
+sha256: 4c25603189da855a2e0ce4704cceead19644a3378c15ce154773534be9e67040
+extension check: OK (Zip)
+
+=== case/evidence/empty.bin ===
+size: 0 bytes
+type: empty
+sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+extension check: ?? no expectation for this extension
+
+=== case/evidence/image.png ===
+size: 66 bytes
+type: PNG image data, 1 x 1, 8-bit/color RGBA, non-interlaced
+sha256: 62d7693d527ce6e5cf4a4f54478b889fe3e01a144d09a0a0482ca512d4225b3a
+extension check: OK (PNG)
+
+=== case/evidence/notes.txt ===
+size: 64 bytes
+type: ASCII text
+lines: 2
+sha256: 8ec8ceec9c70cf7c7934f6ed0832ea0609e9cff50d4f871cc8332223e5cf30cb
+extension check: OK (text)
+
+=== case/evidence/passwords.txt ===
+size: 33 bytes
+type: ASCII text
+lines: 2
+sha256: eddfa3ed00f03f2000f32dc9df2c3c23705612880d60510ef862885969f9d44f
+extension check: OK (text)
+
+=== case/evidence/readme.md ===
+size: 45 bytes
+type: ASCII text
+lines: 2
+sha256: 252c8b4f506eca38cf742a017bd56fa2a0079bd89dbf00e2db962c631be3f4e3
+extension check: OK (text)
+
+=== case/evidence/suspicious.dat ===
+size: 132 bytes
+type: ELF, unknown class 154
+sha256: e1105562d3473531bf8157f2f95837c606bcfdca3b098026a2aceec4d3c783c0
+extension check: ?? no expectation for this extension
+
+=== case/scripts/check.sh ===
+size: 35 bytes
+type: Bourne-Again shell script, ASCII text executable
+lines: 2
+sha256: e51a9378b524ebe982851a380e5929b7f0bfc4d171ab956f06e30383d7ac0892
+extension check: OK (shell script)
+
+=== case/scripts/report.py ===
+size: 27 bytes
+type: ASCII text
+lines: 1
+sha256: 917da56864a3d94f634620e58b4244ce201bc435371b6923935fa00ab5e79ffe
+extension check: !! expected Python script, detected: ASCII text
+
+=== case/scripts/scan.py ===
+size: 87 bytes
+type: ASCII text
+lines: 3
+sha256: 297f24d229cf5b5e57ba604eb11ccb170c2d0bf14da327d8172614928939a132
+extension check: !! expected Python script, detected: ASCII text
+
+=== case/logs/access.log ===
+size: 7915 bytes
+type: ASCII text
+lines: 80
+sha256: e166e9a99ec7169f5a85791447d3b4679e18102f86748add7c5a7f98b3f2c8dd
+extension check: ?? no expectation for this extension
+ioc check: 2 of 7 indicators present (40 matching lines)
+
+=== case/logs/auth.log ===
+size: 5736 bytes
+type: ASCII text
+lines: 60
+sha256: 20aae6a32fc9a123ceb4d2ab685f6e93c14196c2806ab4500e7279f5c60d0836
+extension check: ?? no expectation for this extension
+ioc check: 3 of 7 indicators present (34 matching lines)
+
+=== case/logs/firewall.log ===
+size: 180 bytes
+type: ASCII text
+lines: 5
+sha256: 0c6ee9f39d3cbf98100f14dad8a00910fd2010dc0fd153dd0ae8aa31696370b7
+extension check: ?? no expectation for this extension
+ioc check: 3 of 7 indicators present (3 matching lines)
+
+=== case/logs/revision-report.txt ===
+size: 497 bytes
+type: ASCII text, with escape sequences
+lines: 19
+sha256: a0bf25e31b06fab32867490c983361673c585b8999fbf5ef6d8b679347fc857e
+extension check: OK (text)
+
+=== survey totals ===
+files surveyed: 14
+files flagged: 2
+total IOC matches: 77
+distinct indicators seen (summed per log): 8

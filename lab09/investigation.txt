@@ -1,0 +1,55 @@
+Part 7: Investigation Challenge
+
+1. Most distinct indicators vs most indicator lines:
+
+ auth.log and firewall.log tie for the most distinct indicators - both
+ contain 3 of the 7 in intel/iocs.txt (203.0.113.10, 198.51.100.24 and
+ 203.0.113.200). auth.log is the heavier of the two though, with 34 matching
+ lines against firewall.log's 3. access.log has the most indicator lines: 40
+ in total, but from only 2 addresses (203.0.113.10 on 21 lines and
+ 198.51.100.24 on 19). The answers differ because "distinct" measures breadth
+ (how many different indicators show up) while "lines" measures volume (how
+ often they show up) - access.log hammers the same two addresses repeatedly,
+ whereas firewall.log lists three separate ones once each.
+
+2. Flagged files:
+
+ report.py and scan.py, both in case/scripts. They're valid Python, but
+ neither starts with a #! shebang, so file -b only sees "ASCII text" instead
+ of "Python script" and the extension/type check trips. Nothing else was
+ flagged: check.sh, the PNG, the ZIP and the .txt/.md files all matched, and
+ suspicious.dat and empty.bin just got "?? no expectation" because .dat and
+ .bin aren't in the table (though suspicious.dat is actually an ELF binary
+ hiding behind its extension).
+
+3. Log the survey missed:
+
+ case/nested/archive/old.log. The three globs only look one level into
+ case/evidence, case/scripts and case/logs, so nothing under case/nested/ is
+ ever visited and its hash never reaches the report. A hidden file such as
+ case/logs/.hidden.log would be missed the same way, since * doesn't match
+ names starting with a dot.
+
+4. Would file_survey.sh need changing for case/logs/vpn.log?:
+
+ No. case/logs/vpn.log is re-expanded on every run, so the new file is picked up
+ automatically, and the IOC counts are read from intel/iocs.txt at run time.
+ The only catch is that vpn.log must be a regular file sitting directly in
+ case/logs - a dot-file or a file in a subdirectory would still slip past the
+ non-recursive glob.
+
+5. What the collection tells us:
+
+ This looks like an SSH brute-force that turned into web exploitation:
+ auth.log has 45 failed and 15 accepted password logins, with the failures
+ aimed at admin, root, guest, alice and bob from 203.0.113.10,
+ 198.51.100.24 and 203.0.113.200 (all on the IOC list), while the accepted
+ logins come from internal 192.168.1.x hosts - so someone probably got in and
+ moved laterally. The same external IPs, plus 203.0.113.77, 198.51.100.99 and
+ 198.51.100.77 (which aren't in intel/iocs.txt), hit the web service with
+ sqlmap, curl and python-requests against /admin, /login, /wp-login.php,
+ /.env and /api/status, and firewall.log shows SSH blocked for
+ 203.0.113.10/198.51.100.24 and RDP blocked for 203.0.113.200. On the
+ workstation I found plaintext passwords (alice:password123,
+ bob:qwerty2026), an ELF binary disguised as suspicious.dat, notes recording
+ repeated failed admin logins, and a ZIP containing only a small inside.txt.
