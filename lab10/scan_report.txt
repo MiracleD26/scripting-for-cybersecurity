@@ -1,0 +1,31 @@
+=== IOC sweep over case/ ===
+
+=== case/logs/firewall.log ===
+lines: 18
+failed logins: 0
+IOC matches: 3
+matched: 203.0.113.10 198.51.100.24 203.0.113.200
+note: check stopped early after 3 indicators - more may be present
+
+=== case/logs/auth.log ===
+lines: 18
+failed logins: 45
+IOC matches: 3
+matched: 203.0.113.10 198.51.100.24 203.0.113.200
+note: check stopped early after 3 indicators - more may be present
+
+=== case/logs/access.log ===
+lines: 18
+failed logins: 0
+IOC matches: 2
+matched: 203.0.113.10 198.51.100.24
+
+=== case/nested/archive/old.log ===
+lines: 18
+failed logins: 0
+IOC matches: 0
+
+=== summary ===
+logs scanned: 4
+total IOC matches: 8
+verdict: indicators present - the collection needs investigating

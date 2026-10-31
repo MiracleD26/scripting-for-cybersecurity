@@ -1,0 +1,36 @@
+
+1. Final exit code
+
+   The run ended with exit code 1, which is exactly what the report says too:
+   it found 8 IOC matches in total, so the verdict line read "indicators
+   present - the collection needs investigating". Both come from the same
+   counter, so they can't really disagree.
+
+2. Logs scanned and per-file IOC counts
+
+   4 logs were scanned, giving 8 matches altogether:
+     access.log        2  (203.0.113.10, 198.51.100.24)
+     auth.log          3  (203.0.113.10, 198.51.100.24, 203.0.113.200)
+     firewall.log      3  (203.0.113.10, 198.51.100.24, 203.0.113.200)
+     nested/archive/old.log  0
+   old.log only shows up because the find-based loop goes into subdirectories,
+   which the earlier glob version skipped entirely.
+
+3. Where the break fired, and whether it cost us a match
+
+   It fired twice, on auth.log and firewall.log, since both reached the
+   three-indicator limit - each has the "stopped early" note to prove it. It
+   didn't hide anything this time: running check_iocs.sh (no cut-off) over the
+   same four logs gives 2, 3, 3 and 0, identical to the scan. That's because
+   those two logs only ever contain the three IOC IPs, so stopping at three
+   happened to land on the real total. I wouldn't rely on that though - if a
+   log held four or more indicators the script would still say 3, and the
+   "stopped early" note is the only sign the number is a minimum and not the
+   exact count.
+
+4. Why the exit code matters for an unattended nightly run
+
+   If scan_all.sh ran from cron every night with nobody watching, the exit code
+   is the only signal the scheduler can react to, so 1 can raise an alert or
+   open a ticket while 0 stays quiet - which means someone only gets called out
+   when the collection genuinely needs investigating.
