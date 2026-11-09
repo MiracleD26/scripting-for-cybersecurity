@@ -14,3 +14,4 @@ This repository contains my practical work for the Scripting for Cybersecurity m
 - Lab 08 - File Tests and Applied Decision-Making
 - Lab 09 - For Loops and Repetitive Security Tasks
 - Lab 10 - While Loops and Safer Iteration
+- Python Labs - Labs 11c 12a-b 13a-b 14a-c
